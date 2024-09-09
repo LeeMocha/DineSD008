@@ -1,4 +1,5 @@
 <mvc:View 
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" 
     xmlns:smarttable="sap.ui.comp.smarttable" 
     xmlns:valuehelpdialog="sap.ui.comp.valuehelpdialog" 
     xmlns:form="sap.ui.layout.form" 
@@ -45,13 +46,33 @@
                                 columnsM="2"
                                 singleContainerFullSize="false">
                                 <form:content>
+                                    <smartFilterBar:SmartFilterBar 
+                                        id="smartFilterBar"
+                                        enableBasicSearch="true"
+                                        entitySet="YV_SD008_LJH_2_PG"
+                                        persistencyKey="SmartFilter_Explored"
+                                        search="onSearch"
+                                        >
+                                        <smartFilterBar:controlConfiguration>
+                                            <smartFilterBar:ControlConfiguration
+                                                key="ProductExternalID" visibleInAdvancedArea="true"  index="1"
+                                                preventInitialDataFetchInValueHelpDialog="false" mandatory="mandatory">
+                                                <smartFilterBar:defaultFilterValues>
+                                        </smartFilterBar:defaultFilterValues>
+                                            </smartFilterBar:ControlConfiguration>
+                                            
+                                            </smartFilterBar:controlConfiguration>
+                                        <smartFilterBar:layoutData>
+                                            <m:FlexItemData shrinkFactor="0"/>
+                                        </smartFilterBar:layoutData>
+                                    </smartFilterBar:SmartFilterBar>
                                     <m:Label text="자재 코드" labelFor="MaterialInputId"></m:Label>
                                     <m:MultiInput 
                                         suggest="onSuggest"
                                         id="MaterialInputId"
                                         width="16rem" 
                                         valueHelpRequest="handleValueHelp" 
-                                        showValueHelp="true" 
+                                        showValueHelp="true"
                                         tokenUpdate="onTokenUpdate"
                                         showSuggestion="true"
                                         maxLength="10000000"
