@@ -48,22 +48,23 @@
                                 <form:content>
                                     <smartFilterBar:SmartFilterBar 
                                         id="smartFilterBar"
-                                        enableBasicSearch="true"
-                                        entitySet="YV_SD008_LJH_2_PG"
-                                        persistencyKey="SmartFilter_Explored"
+                                        entitySet="SD008_2"
+                                        useToolbar="false"
+                                        
+                                        showFilterConfiguration="false"
+                                        showGoOnFB="false"
+                                        width="14rem"
                                         search="onSearch"
                                         >
                                         <smartFilterBar:controlConfiguration>
                                             <smartFilterBar:ControlConfiguration
-                                                key="ProductExternalID" visibleInAdvancedArea="true"  index="1"
-                                                preventInitialDataFetchInValueHelpDialog="false" mandatory="mandatory">
-                                                <smartFilterBar:defaultFilterValues>
-                                        </smartFilterBar:defaultFilterValues>
+                                                key="Material" visibleInAdvancedArea="true"  index="1"
+                                                preventInitialDataFetchInValueHelpDialog="false" mandatory="mandatory"
+                                                >
                                             </smartFilterBar:ControlConfiguration>
-                                            
-                                            </smartFilterBar:controlConfiguration>
-                                        <smartFilterBar:layoutData>
-                                            <m:FlexItemData shrinkFactor="0"/>
+                                        </smartFilterBar:controlConfiguration>
+                                        <smartFilterBar:layoutData >
+                                            <m:FlexItemData   />
                                         </smartFilterBar:layoutData>
                                     </smartFilterBar:SmartFilterBar>
                                     <m:Label text="자재 코드" labelFor="MaterialInputId"></m:Label>
@@ -303,10 +304,10 @@
                         </t:Table>
                         <!-- <smarttable:SmartTable
                             id='smartTable'
-                            entitySet="SD008_2"
+                            entitySet="YV_SD008_LJH_2_PG"
                             tableType="Table"
                             initiallyVisibleFields="Material,RecievedCustomer,RecievedMaterialGroup,ConditionValidityDate,ZPPRTable,ZPPR,ZPPRUnit,ZK06Table,ZK06,ZK06Unit,ZK07Table,ZK07,ZK07Unit,NETPR,NETPRUnit"
-                            smartFilterId="smartFilter"
+                            smartFilterId="smartFilterBar"
                             useVariantManagement="true" 
                             useTablePersonalisation="true" 
                             showRowCount="true" 
